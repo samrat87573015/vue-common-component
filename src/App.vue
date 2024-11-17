@@ -14,7 +14,7 @@ import Breadcrumb from './components/Breadcrumb.vue';
       <div class="container mx-auto">
           <div class="app_header flex items-center justify-between">
               <div class="logo">
-                <img src="./assets/vue.svg" alt="logo">
+                <img src="/assets/vue.svg" alt="logo">
 
               </div>
               <nav>

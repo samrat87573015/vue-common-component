@@ -136,10 +136,10 @@ const product = {
 
 // Images array (replace with actual image URLs)
 const images = [
-  'https://images.pexels.com/photos/24531988/pexels-photo-24531988/free-photo-of-historical-deutsche-orient-bank-building-in-istanbul-turkey.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
-  'https://images.pexels.com/photos/28847012/pexels-photo-28847012/free-photo-of-stunning-view-of-brussels-town-hall-in-belgium.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
-  'https://images.pexels.com/photos/5256400/pexels-photo-5256400.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
-  'https://images.pexels.com/photos/24531988/pexels-photo-24531988/free-photo-of-historical-deutsche-orient-bank-building-in-istanbul-turkey.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
+  '/assets/img/isotop/img1.jpeg',
+  '/assets/img/isotop/img2.jpeg',
+  '/assets/img/isotop/img3.jpeg',
+  '/assets/img/isotop/img4.jpeg'
 ]
 
 

@@ -36,14 +36,14 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import Isotope from 'isotope-layout';
 
 const items = [
-  { id: 1, title: 'Item 1', category: 'Category A', image: 'src/assets/img/isotop/img1.jpeg', description: 'A short description for Item 1.' },
-  { id: 2, title: 'Item 2', category: 'Category B', image: 'src/assets/img/isotop/img2.jpeg', description: 'This is a longer description for Item 2 to demonstrate varying heights in the masonry layout.' },
-  { id: 3, title: 'Item 3', category: 'Category A', image: 'src/assets/img/isotop/img3.jpeg', description: 'Item 3 has a medium-length description.' },
-  { id: 4, title: 'Item 4', category: 'Category C', image: 'src/assets/img/isotop/img4.jpeg', description: 'The description for Item 4 is quite long to show how the masonry layout adapts to different content lengths. This helps to create an interesting and dynamic grid.' },
-  { id: 5, title: 'Item 5', category: 'Category B', image: 'src/assets/img/isotop/img5.jpeg', description: 'A brief note about Item 5.' },
-  { id: 6, title: 'Item 6', category: 'Category C', image: 'src/assets/img/isotop/img6.jpeg', description: 'Item 6 has some interesting details that make its description a bit longer than average.' },
-  { id: 7, title: 'Item 7', category: 'Category A', image: 'src/assets/img/isotop/img7.jpeg', description: 'Lucky number 7 with a standard description length.' },
-  { id: 8, title: 'Item 8', category: 'Category B', image: 'src/assets/img/isotop/img8.jpeg', description: 'The last item in our list, number 8, wraps up with a medium-sized description to balance out the layout.' },
+  { id: 1, title: 'Item 1', category: 'Category A', image: '/assets/img/isotop/img1.jpeg', description: 'A short description for Item 1.' },
+  { id: 2, title: 'Item 2', category: 'Category B', image: '/assets/img/isotop/img2.jpeg', description: 'This is a longer description for Item 2 to demonstrate varying heights in the masonry layout.' },
+  { id: 3, title: 'Item 3', category: 'Category A', image: '/assets/img/isotop/img3.jpeg', description: 'Item 3 has a medium-length description.' },
+  { id: 4, title: 'Item 4', category: 'Category C', image: '/assets/img/isotop/img4.jpeg', description: 'The description for Item 4 is quite long to show how the masonry layout adapts to different content lengths. This helps to create an interesting and dynamic grid.' },
+  { id: 5, title: 'Item 5', category: 'Category B', image: '/assets/img/isotop/img5.jpeg', description: 'A brief note about Item 5.' },
+  { id: 6, title: 'Item 6', category: 'Category C', image: '/assets/img/isotop/img6.jpeg', description: 'Item 6 has some interesting details that make its description a bit longer than average.' },
+  { id: 7, title: 'Item 7', category: 'Category A', image: '/assets/img/isotop/img7.jpeg', description: 'Lucky number 7 with a standard description length.' },
+  { id: 8, title: 'Item 8', category: 'Category B', image: '/assets/img/isotop/img8.jpeg', description: 'The last item in our list, number 8, wraps up with a medium-sized description to balance out the layout.' },
 ];
 
 const filters = ['All', 'Category A', 'Category B', 'Category C'];

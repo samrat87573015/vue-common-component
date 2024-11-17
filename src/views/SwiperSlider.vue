@@ -53,19 +53,19 @@ const slides = ref([
     id: 1,
     title: 'Beautiful Landscape',
     description: 'A stunning view of mountains and lakes.',
-    image: 'src/assets/img/isotop/img1.jpeg'
+    image: '/assets/img/isotop/img1.jpeg'
   },
   {
     id: 2,
     title: 'City Skyline',
     description: 'An impressive urban landscape at night.',
-    image: 'src/assets/img/isotop/img2.jpeg'
+    image: '/assets/img/isotop/img2.jpeg'
   },
   {
     id: 3,
     title: 'Tropical Beach',
     description: 'Crystal clear waters and white sand beaches.',
-    image: 'src/assets/img/isotop/img3.jpeg'
+    image: '/assets/img/isotop/img3.jpeg'
   }
 ])
 

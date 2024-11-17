@@ -3,10 +3,10 @@ import { ref } from 'vue';
 import { ChevronRightIcon, ChevronLeftIcon, XIcon } from 'lucide-vue-next';
 
     const images = ref([
-      'src/assets/img/isotop/img1.jpeg',
-      'src/assets/img/isotop/img2.jpeg',
-      'src/assets/img/isotop/img3.jpeg',
-      'src/assets/img/isotop/img4.jpeg',
+      '/assets/img/isotop/img1.jpeg',
+      '/assets/img/isotop/img2.jpeg',
+      '/assets/img/isotop/img3.jpeg',
+      '/assets/img/isotop/img4.jpeg',
     ]);
     const isLightboxOpen = ref(false);
     const currentImageIndex = ref(0);
@@ -38,7 +38,7 @@ import { ChevronRightIcon, ChevronLeftIcon, XIcon } from 'lucide-vue-next';
 <template>
   <div>
     <!-- Image Gallery -->
-    <div class="gallery h">
+    <div class="gallery">
       <div
         v-for="(image, index) in images"
         :key="index"
