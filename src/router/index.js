@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Isotope from '../views/Isotope.vue'
 import ProductZoom from '../views/ProductZoom.vue'
 import SwiperSlider from '../views/SwiperSlider.vue'
+import Lightbox from '../views/Lightbox.vue'
 
 const routes = [
   { 
@@ -25,6 +26,11 @@ const routes = [
     path: '/swiper-slider', 
     component: SwiperSlider,
     meta: { breadcrumb: 'Swiper Slider' } 
+  },
+  { 
+    path: '/lightbox', 
+    component: Lightbox,
+    meta: { breadcrumb: 'Lightbox' } 
   },
 ]
 

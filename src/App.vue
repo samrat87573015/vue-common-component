@@ -31,6 +31,9 @@ import Breadcrumb from './components/Breadcrumb.vue';
                   <li>
                     <RouterLink to="/swiper-slider">Swiper Slider</RouterLink>
                   </li>
+                  <li>
+                    <RouterLink to="/lightbox">Lightbox</RouterLink>
+                  </li>
                 </ul>
               </nav>
             </div>
