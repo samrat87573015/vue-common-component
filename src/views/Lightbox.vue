@@ -38,7 +38,7 @@ import { ChevronRightIcon, ChevronLeftIcon, XIcon } from 'lucide-vue-next';
 <template>
   <div>
     <!-- Image Gallery -->
-    <div class="gallery">
+    <div class="gallery h">
       <div
         v-for="(image, index) in images"
         :key="index"
