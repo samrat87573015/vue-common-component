@@ -54,7 +54,7 @@ import { ChevronRightIcon, ChevronLeftIcon, XIcon } from 'lucide-vue-next';
 
     <!-- Lightbox Modal -->
     <div v-if="isLightboxOpen" class="lightbox">
-      <div class="lightbox-content">
+      <div class="lightbox-content ">
         <button class="close-btn" @click="closeLightbox"><XIcon class="w-10 h-10 border border-gray-500" /></button>
         <button class="prev-btn" @click="prevImage"><ChevronLeftIcon class="w-10 h-10 border border-gray-500" /></button>
         <img :src="images[currentImageIndex]" alt="Lightbox Image" class="lightbox-image" />
@@ -87,6 +87,7 @@ import { ChevronRightIcon, ChevronLeftIcon, XIcon } from 'lucide-vue-next';
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
 }
 
 
