@@ -22,55 +22,35 @@
         </div>
 
         <!-- Desktop Navigation -->
-        <div class="hidden lg:flex items-center space-x-8">
-          <template v-for="(item, index) in menuItems" :key="index">
-            <div class="relative group">
-              <button class="py-2 flex items-center space-x-1 hover:text-gray-600" @click="item.isOpen = !item.isOpen" >
 
-                <span>
-                  <RouterLink :to="item.Link">{{ item.label }}</RouterLink>
-                </span>
-                <ChevronDownIcon v-if="item.children" class="w-4 h-4" :class="{ 'rotate-180': item.isOpen }" />
-              </button>
-
-              <!-- Desktop Dropdown -->
-              <div v-if="item.children" v-show="item.isOpen"
-                class="absolute top-full right-0 w-48 bg-white shadow-lg rounded-lg py-2 mt-1">
-                <template v-for="(child, childIndex) in item.children" :key="childIndex">
-                  <div class="relative group/sub">
-                    <RouterLink :to="child.Link"
-                      class="w-full text-left px-4 py-2 hover:bg-gray-100 flex items-center justify-between"
-                      @click="child.isOpen = !child.isOpen">
-                      {{ child.label }}
-                      <ChevronRightIcon v-if="child.children" class="w-4 h-4" />
-                    </RouterLink>
-
-                    <!-- Desktop Sub-Dropdown -->
-                    <div v-if="child.children" v-show="child.isOpen"
-                      class="absolute left-full top-0 w-48 bg-white shadow-lg rounded-lg py-2">
-                      <a v-for="(subChild, subIndex) in child.children" :key="subIndex" href="#"
-                        class="block px-4 py-2 hover:bg-gray-100">
-                        {{ subChild.label }}
-                      </a>
-                    </div>
-                  </div>
-                </template>
-              </div>
-            </div>
-          </template>
+        <div class="main-menu">
+          <ul class="hidden lg:flex lg:items-center lg:space-x-4 lg:text
+          -sm">
+            <li v-for="item in menuItems"><router-link :to="item.Link">{{ item.label }}</router-link><ChevronDownIcon v-if="item.children" class="w-4 h-4"/>
+              <ul v-if="item.children"  class="sub-menu">
+                <li v-for="child in item.children"><router-link :to="child.Link">{{ child.label }}</router-link><ChevronDownIcon v-if="child.children" class="w-4 h-4"/>
+                <ul v-if="child.children" class="sub-menu">
+                  <li v-for="subChild in child.children"><router-link :to="subChild.Link">{{ subChild.label }}</router-link></li>
+                </ul>
+                </li>
+              </ul>
+            </li>
+            
+          </ul>
         </div>
+
       </div>
 
       <!-- Mobile Navigation -->
       <div class="lg:hidden space-y-1 p-4">
         <template v-for="(item, index) in menuItems" :key="index">
           <div>
-            <button class="w-full text-left px-4 py-2 hover:bg-gray-800 rounded flex items-center justify-between"
+            <RouterLink :to="item.Link" class="w-full text-left px-4 py-2 hover:bg-gray-800 rounded flex items-center justify-between"
               @click="item.isOpen = !item.isOpen">
               {{ item.label }}
               <ChevronDownIcon v-if="item.children" class="w-4 h-4 transition-transform duration-200"
                 :class="{ 'rotate-180': item.isOpen }" />
-            </button>
+            </RouterLink>
 
             <!-- Mobile Submenu -->
             <div v-if="item.children" v-show="item.isOpen" class="ml-4 space-y-1">
@@ -121,7 +101,8 @@ const menuItems = reactive([
       { label: 'Isotope', Link: '/isotope', isOpen: false, },
       { label: 'Product Zoom', Link: '/product-zoom', isOpen: false },
       { label: 'Swiper Slider', Link: '/swiper-slider', isOpen: false },
-      { label: 'Lightbox', Link: '/lightbox', isOpen: false }
+      { label: 'Lightbox', Link: '/lightbox', isOpen: false },
+      { label: 'OTP Validation', Link: '/otp-validation', isOpen: false },
 
     ]
   },
@@ -132,5 +113,34 @@ const menuItems = reactive([
 /* Prevent body scroll when mobile menu is open */
 :global(body.menu-open) {
   overflow: hidden;
+}
+.main-menu{
+  position: relative;
+}
+.main-menu ul li{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.main-menu ul li .sub-menu{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+}
+.main-menu ul li:hover .sub-menu{
+  opacity: 1;
+  visibility: visible;
+}
+.main-menu ul li .sub-menu li{
+  display: block;
+  margin-bottom: 5px;
 }
 </style>

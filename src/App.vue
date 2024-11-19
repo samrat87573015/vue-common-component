@@ -4,6 +4,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 import Breadcrumb from './components/Breadcrumb.vue';
 import Menu from './components/Menu.vue';
+import { HouseIcon, ChevronRightIcon } from 'lucide-vue-next';
 
 
 </script>
@@ -15,9 +16,9 @@ import Menu from './components/Menu.vue';
     <Menu />
 
 
-    <div class="p-4">
+    <div class="container mx-auto p-4">
       <ul v-if="$route.meta.breadcrumb !== 'Home'" class="flex gap-4 items-center">
-        <li><router-link to="/">Home</router-link> /</li>
+        <li class="flex items-center gap-3"><router-link to="/"><HouseIcon class="w-4 h-4" /></router-link><ChevronRightIcon class="w-4 h-4" /></li>
         <Breadcrumb />
       </ul>
       

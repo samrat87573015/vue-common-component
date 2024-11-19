@@ -5,6 +5,7 @@ import Isotope from '../views/Isotope.vue'
 import ProductZoom from '../views/ProductZoom.vue'
 import SwiperSlider from '../views/SwiperSlider.vue'
 import Lightbox from '../views/Lightbox.vue'
+import OtpValidation from '../views/OtpValidation.vue'
 
 const routes = [
   { 
@@ -31,6 +32,11 @@ const routes = [
     path: '/lightbox', 
     component: Lightbox,
     meta: { breadcrumb: 'Lightbox' } 
+  },
+  { 
+    path: '/otp-validation', 
+    component: OtpValidation,
+    meta: { breadcrumb: 'OtpValidation' } 
   },
 ]
 
