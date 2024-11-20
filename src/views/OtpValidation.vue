@@ -33,32 +33,31 @@ import { ref, computed, onMounted } from "vue";
     };
 
 
-    const handleInput = (index, event) => {
-      const value = event.target.value;
+const handleInput = (index, event) => {
+  const value = event.target.value;
+  const inputs = document.querySelectorAll("input");
 
-      // Allow only single digit numbers
-      if (/^\d$/.test(value)) {
-        otp.value[index] = value;
+  // Allow only single digit numbers
+  if (/^\d$/.test(value)) {
+    otp.value[index] = value;
 
-        // Automatically move to the next input if it's not the last
-        if (index < otp.value.length - 1) {
-          document.querySelectorAll("input")[index + 1].focus();
-        }
-        else if (key === "deleteContentBackward") {
-          // Handle backspace logic
-          otp.value[index] = "";
+    // Automatically move to the next input if it's not the last
+    if (index < otp.value.length - 1) {
+      inputs[index + 1].focus();
+    }
+  } else if (event.inputType === "deleteContentBackward" || value === "") {
+    // Handle backspace or empty input
+    otp.value[index] = "";
 
-          // Automatically move to the previous input if the current input is empty
-          if (index > 0) {
-            document.querySelectorAll("input")[index - 1].focus();
-          }
-        }
-
-      } else {
-        // Clear the input if invalid value
-        otp.value[index] = "";
-      }
-    };
+    // Move to the previous input if it's not the first
+    if (index > 0) {
+      inputs[index - 1].focus();
+    }
+  } else {
+    // Clear the input if invalid value
+    otp.value[index] = "";
+  }
+};
 
     const otpCodeValue = ref("");
 

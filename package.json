@@ -12,6 +12,7 @@
     "@ckeditor/ckeditor5-build-classic": "^43.3.1",
     "@ckeditor/ckeditor5-build-decoupled-document": "^43.3.1",
     "@ckeditor/ckeditor5-vue": "^7.2.0",
+    "imagesloaded": "^5.0.0",
     "isotope-layout": "^3.0.6",
     "lucide-vue-next": "^0.460.0",
     "swiper": "^11.1.14",

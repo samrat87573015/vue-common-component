@@ -34,6 +34,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import Isotope from 'isotope-layout';
+import imagesLoaded from 'imagesloaded';
 
 const items = [
   { id: 1, title: 'Item 1', category: 'Category A', image: '/assets/img/isotop/img1.jpeg', description: 'A short description for Item 1.' },
@@ -52,13 +53,18 @@ const gridRef = ref(null);
 let isotope = null;
 
 onMounted(() => {
-  isotope = new Isotope(gridRef.value, {
-    itemSelector: '.masonry-item',
-    layoutMode: 'masonry',
-    masonry: {
-      columnWidth: '.masonry-item',
-      gutter: 16
-    }
+  const grid = gridRef.value;
+
+  // Ensure all images are loaded before initializing Isotope
+  imagesLoaded(grid, () => {
+    isotope = new Isotope(grid, {
+      itemSelector: '.masonry-item',
+      layoutMode: 'masonry',
+      masonry: {
+        columnWidth: '.masonry-item',
+        gutter: 16
+      }
+    });
   });
 });
 
@@ -77,6 +83,7 @@ const updateFilter = (filter) => {
   }
 };
 </script>
+
 
 <style scoped>
 .masonry-isotope {
