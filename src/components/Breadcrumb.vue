@@ -1,9 +1,9 @@
 <template>
   <nav aria-label="Breadcrumb" class="text-sm">
     <ol class="list-none p-0 inline-flex items-center">
-      <li 
-        v-for="(crumb, index) in breadcrumbs" 
-        :key="crumb.name" 
+      <li
+        v-for="(crumb, index) in breadcrumbs"
+        :key="index"
         class="flex items-center"
         :class="{ 'text-gray-500': index === breadcrumbs.length - 1 }"
       >
@@ -15,7 +15,7 @@
         </template>
         <template v-else>
           <router-link
-            :to="{ name: crumb.name }"
+            :to="{ name: crumb.name || undefined }"
             class="text-blue-600 hover:text-blue-800 transition-colors duration-200 ease-in-out"
           >
             {{ crumb.label }}
@@ -26,6 +26,7 @@
   </nav>
 </template>
 
+
 <script setup>
 import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
@@ -35,16 +36,16 @@ const route = useRoute();
 const router = useRouter();
 
 const breadcrumbs = computed(() => {
-  const matchedRoutes = route.matched.filter(route => route.meta && route.meta.breadcrumb);
-  
-  return matchedRoutes.map(route => {
-    return {
-      name: route.name,
-      label: typeof route.meta.breadcrumb === 'function' 
-        ? route.meta.breadcrumb(route)
-        : route.meta.breadcrumb
-    };
-  });
+  const matchedRoutes = route.matched.filter(
+    (route) => route.meta && route.meta.breadcrumb
+  );
+
+  return matchedRoutes.map((route) => ({
+    name: route.name,
+    label: typeof route.meta.breadcrumb === 'function'
+      ? route.meta.breadcrumb(route)
+      : route.meta.breadcrumb,
+  }));
 });
 </script>
 
