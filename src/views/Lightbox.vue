@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
-import { ChevronRightIcon, ChevronLeftIcon, XIcon } from 'lucide-vue-next';
+import PhoneInput from '../components/PhoneInput.vue';
+import { ChevronRightIcon, ChevronLeftIcon, XIcon, ArrowRightIcon } from 'lucide-vue-next';
 
     const images = ref([
       '/assets/img/isotop/img1.jpeg',
@@ -36,7 +37,8 @@ import { ChevronRightIcon, ChevronLeftIcon, XIcon } from 'lucide-vue-next';
 
 
 <template>
-  <div>
+  <div class="container mx-auto p-4">
+    <PhoneInput />
     <!-- Image Gallery -->
     <div class="gallery">
       <div
@@ -48,8 +50,6 @@ import { ChevronRightIcon, ChevronLeftIcon, XIcon } from 'lucide-vue-next';
         <img :src="image" alt="Gallery Image" class="thumbnail w-[300px] h-[300px] object-cover" />
       </div>
     </div>
-
-    <ArrowRightIcon />
   
 
     <!-- Lightbox Modal -->
@@ -61,6 +61,8 @@ import { ChevronRightIcon, ChevronLeftIcon, XIcon } from 'lucide-vue-next';
         <button class="next-btn" @click="nextImage"><ChevronRightIcon class="w-10 h-10 border border-gray-500" /> </button>
       </div>
     </div>
+
+
   </div>
 </template>
 

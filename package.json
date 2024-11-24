@@ -14,11 +14,13 @@
     "@ckeditor/ckeditor5-vue": "^7.2.0",
     "imagesloaded": "^5.0.0",
     "isotope-layout": "^3.0.6",
+    "libphonenumber-js": "^1.11.15",
     "lucide-vue-next": "^0.460.0",
     "swiper": "^11.1.14",
     "vue": "^3.5.12",
     "vue-isotope": "^0.1.0",
-    "vue-router": "^4.4.5"
+    "vue-router": "^4.4.5",
+    "vue-tel-input": "^9.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.4",
